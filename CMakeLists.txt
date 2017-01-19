@@ -4,7 +4,7 @@ project(parlent)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-set(CMAKE_CXX_FLAGS "-std=c++11 -Wall -Werror -lasound -lfftw3")
+set(CMAKE_CXX_FLAGS "-std=c++11 -Wall -Werror")
 
 set(SOURCE
     ${SOURCE}
@@ -23,5 +23,7 @@ set(HEADERS
     )
 
 add_executable(parlent ${SOURCE} ${HEADERS})
+
+target_link_libraries(parlent asound fftw3)
 
 install(TARGETS parlent RUNTIME DESTINATION bin)
